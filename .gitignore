@@ -1,3 +1,10 @@
+service_account.json
+node_modules/
+dist/
+.env
+
+pnpm-lock.yaml
+
 # Logs
 logs
 *.log

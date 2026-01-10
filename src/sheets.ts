@@ -15,9 +15,15 @@ export type SheetRow = {
 
 type IndexMap = Record<string, number>;
 
-const creds = JSON.parse(
-  fs.readFileSync(config.googleCredsPath, "utf8")
-) as object;
+// const creds = JSON.parse(
+//   fs.readFileSync(config.googleCredsPath, "utf8")
+// ) as object;
+
+// const creds = JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT!);
+
+const b64 = process.env.GOOGLE_SERVICE_ACCOUNT_B64!;
+const json = Buffer.from(b64, "base64").toString("utf8");
+const creds = JSON.parse(json);
 
 const auth = new google.auth.GoogleAuth({
   credentials: creds,

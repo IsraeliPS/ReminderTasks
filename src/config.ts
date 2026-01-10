@@ -21,6 +21,7 @@ export const config = {
   sheetTab: process.env.SHEET_TAB ?? "Recordatorio",
   defaultTz: process.env.DEFAULT_TZ ?? "America/Mexico_City",
   pollCron: process.env.POLL_CRON ?? "* * * * *",
-  googleCredsPath: required("GOOGLE_APPLICATION_CREDENTIALS"),
+  googleCredsPath: required("GOOGLE_APPLICATION_CREDENTIALS") ?? "",
   chatIds: list("CHAT_IDS"),
+  googleCredsB64: required("GOOGLE_SERVICE_ACCOUNT_B64"),
 };
